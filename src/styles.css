@@ -1,0 +1,19 @@
+/* Applying styles to elements with the "scrollable" class used in cards*/
+.scrollable {
+  /* Setting a maximum height for the scrollable element */
+  max-height: 400px;
+  /* Allowing content to overflow when needed */
+  overflow: auto;
+}
+
+/* Customizing the appearance of the scrollbar */
+.scrollable::-webkit-scrollbar {
+  /* Setting the width of the scrollbar */
+  width: 0.5em;
+}
+
+/* Customizing the appearance of the scrollbar thumb */
+.scrollable::-webkit-scrollbar-thumb {
+  /* Setting the background color of the scrollbar thumb to transparent */
+  background-color: transparent;
+}
