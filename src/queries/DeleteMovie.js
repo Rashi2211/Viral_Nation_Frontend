@@ -4,7 +4,6 @@ import { gql } from "@apollo/client";
 export const DELETE_MOVIE = gql`
   mutation DeleteMovie($deleteMovieId: Int!) {
     deleteMovie(id: $deleteMovieId) {
-                          // Response fields returned after deleting a movie
       user {
         email
         id

@@ -68,6 +68,7 @@ const SearchBar = ({
             gap: 1,
             minWidth: "150px",
             whiteSpace: "nowrap",
+            lineHeight: "2.64",
             color:
               theme.palette.mode === "light"
                 ? theme.palette.primary.light
@@ -95,19 +96,7 @@ const SearchBar = ({
             },
           }}
         >
-          {/* Table Layout Button */}
-          <Button
-            sx={{
-              [theme.breakpoints.down("xs")]: {
-                padding: theme.spacing(1),
-                margin: theme.spacing(1),
-              },
-            }}
-            onClick={() => setLayout("table")}
-            variant={layout === "table" ? "contained" : "outlined"}
-          >
-            <ViewWeekOutlinedIcon />
-          </Button>
+       
           {/* Grid Layout Button */}
           <Button
             sx={{
@@ -121,6 +110,19 @@ const SearchBar = ({
             variant={layout === "grid" ? "contained" : "outlined"}
           >
             <ViewCompactAltOutlinedIcon />
+          </Button>
+             {/* Table Layout Button */}
+             <Button
+            sx={{
+              [theme.breakpoints.down("xs")]: {
+                padding: theme.spacing(1),
+                margin: theme.spacing(1),
+              },
+            }}
+            onClick={() => setLayout("table")}
+            variant={layout === "table" ? "contained" : "outlined"}
+          >
+            <ViewWeekOutlinedIcon />
           </Button>
         </ButtonGroup>
       </Box>

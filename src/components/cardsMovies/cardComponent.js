@@ -28,7 +28,7 @@ const CardComponent = ({
       >
         <CardMedia
           component="img"
-          height="140"
+          height="180"
           image={image} // Image URL for the card
           alt={title}   // Alt text for the image
         />

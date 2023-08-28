@@ -5,9 +5,9 @@ import CardComponent from './cardComponent';
 const CardsGrid = ({ data, handleDeleteClick, handleEditClick}) => {
 
   return ( 
-    <Grid container spacing={2} > {/* Container to hold grid of cards */}
+    <Grid container spacing={4} > {/* Container to hold grid of cards */}
         {data.map((card) => (
-          <Grid item xs={4} sm={4} md={4}key={card.id}> {/* Each card in a grid item */}
+          <Grid item xs={12} sm={6} md={4}key={card.id}> {/* Each card in a grid item */}
             <CardComponent
               image={card.image} // Passing image URL to CardComponent
               id={card.id} // Passing card ID

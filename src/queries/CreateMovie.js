@@ -15,7 +15,6 @@ export const CREATE_MOVIE = gql`
       releaseDate: $releaseDate
       image: $image
     ) {
-                          // Response fields returned after creating a movie
       creatorId
       description
       directorName

@@ -11,6 +11,7 @@ import {
   DialogActions,
   FormControl,
   Select,
+  useTheme,
   MenuItem,
 } from "@mui/material";
 import CardsGrid from "./cardGrid";
@@ -36,6 +37,7 @@ const CardLayout = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false); // Control delete confirmation dialog
   const [debouncedSearchQuery, setDebouncedSearchQuery] = useState(searchQuery); // Debounced search query
   const [editCardOpen, setEditCardOpen] = useState(false); // Control edit movie dialog
+  const theme = useTheme();
   const [newCardData, setNewCardData] = useState({
     image: "",
     title: "",
@@ -300,16 +302,25 @@ const CardLayout = () => {
         position="fixed"
         bottom="0"
         zIndex="100"
-        sx={{ flexGrow: 1 }}
+        color="white!important"
+        sx={{ flexGrow: 1 ,
+          color:
+          theme.palette.mode === "light"
+            ? theme.palette.common.black
+            : theme.palette.common.white,
+            bgcolor: theme.palette.mode === "light" ? theme.palette.secondary.main : theme.palette.grey[900],
+        border: theme.palette.mode === "dark" && "none",
+        height: "8vh",
+        }}
       >
         <h5> Rows Per Page</h5>
-        <FormControl>
+        <FormControl sx={{ height: "2.5rem",}}>
           <Select
             value={rowsPerPage}
             onChange={handleRowsPerPageChange}
-            style={{
+            sx={{
               minWidth: "30%",
-              height: "75%",
+             
               marginLeft: "10px",
             }}
           >
@@ -320,10 +331,10 @@ const CardLayout = () => {
         </FormControl>
         {/* Displaying pagination at the bottom of the page */}
         <Pagination
-          count={Math.ceil(getAllMoviesData.movies.total_rows / itemsPerPage)}
+          count={Math.ceil(getAllMoviesData.movies.total_rows / rowsPerPage)}
           page={currentPage}
           onChange={handlePaginationChange}
-          color="primary"
+          style={{color: "white!important"}}
           justifyContent="end"
         />
       </Box>

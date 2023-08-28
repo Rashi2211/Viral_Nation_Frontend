@@ -1,7 +1,7 @@
 /* Applying styles to elements with the "scrollable" class used in cards*/
 .scrollable {
   /* Setting a maximum height for the scrollable element */
-  max-height: 400px;
+  max-height: 380px;
   /* Allowing content to overflow when needed */
   overflow: auto;
 }
